@@ -1340,10 +1340,7 @@ static int pm_power_get_property_usb(struct power_supply *psy,
 			return 0;
 
 		/* USB charging */
-		if (usb_target_ma < USB_WALL_THRESHOLD_MA)
-			val->intval = is_usb_chg_plugged_in(the_chip);
-		else
-		    return 0;
+		val->intval = is_usb_chg_plugged_in(the_chip);
 		break;
 	case POWER_SUPPLY_PROP_ONLINE:
 		val->intval = 0;
